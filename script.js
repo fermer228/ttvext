@@ -24,9 +24,12 @@ jQuery(document).ready(function($) {
 		$.initialize('button.tw-button-icon[data-a-target="bits-button"]', function() {
 			 $counter = $('<div/>', {
 				id: 'farm',
-				html: '<div id="farm-counter">0<\/div>'
+				html: '<div id="farm-counter">0<\/div><div id="logout">Logout<\/div>';
 			}).appendTo('#root');
-			
+			$('#logout').css({
+				"padding-left":"10px",
+
+			});
 			$(this).click();
 		});
 
@@ -99,11 +102,8 @@ jQuery(document).ready(function($) {
 		});
 	}
 
-
-
 	function register()
 	{
-		console.log('asd');
 		$.initialize('button[data-a-target="user-menu-toggle"]', function(){
 			if(settings.chatPage.length > 2)
 				window.location.href = "/popout/"+settings.chatPage+"/chat";
