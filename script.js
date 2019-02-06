@@ -11,6 +11,16 @@ var mails = ["gmail.com", "hotmail.com"].random();
 jQuery(document).ready(function($) {
 	var path = window.location.pathname;
 	var match = path.match(/^\/popout\/(\w+)\/chat$/)
+
+	var css = '';
+	var style = document.createElement('style');
+	if (style.styleSheet) {
+		style.styleSheet.cssText = css;
+	} else {
+		style.appendChild(document.createTextNode(css));
+	}
+
+document.getElementsByTagName('head')[0].appendChild(style);
 	
 	var isChat = (match != null) && (match.length == 2);
 	console.log(settings);
@@ -20,16 +30,19 @@ jQuery(document).ready(function($) {
 		settings.chatPage = match[1];
 		setSettings(settings);
 		var bits;
-		var $counter;
-		$.initialize('button.tw-button-icon[data-a-target="bits-button"]', function() {
-			 $counter = $('<div/>', {
-				id: 'farm',
-				html: '<div id="farm-counter">0<\/div><div id="logout">Logout<\/div>';
-			}).appendTo('#root');
-			$('#logout').css({
-				"padding-left":"10px",
-
+		$.initialize('#chat-room-header-label', function(){
+			$(this).html('<div id="logout">logout<\/div>');
+			$('#logout').css({"font-size":"20px", "cursor":"pointer", "user-select":"none", "background":"white", "border":"1px solid black", "padding":"5px"}).click(function(){
+				unlog();
 			});
+		});
+		
+
+		$.initialize('button.tw-button-icon[data-a-target="bits-button"]', function() {
+			$('<div/>', {
+				id: 'farm',
+				html: '<div id="farm-counter">0<\/div>'
+			}).appendTo('#root');
 			$(this).click();
 		});
 
@@ -44,15 +57,19 @@ jQuery(document).ready(function($) {
 			if(match != null && match.length > 1)
 				bits = match[1];
 
-			$counter.find('#farm-counter').text(bits);
+			var $counter = $('#farm-counter');
+			$counter.text(bits);
 			$counter.click(function() {
-				var textfield = $('textarea[data-a-target="chat-input"]')[0];
-				textfield.value = emotes.random()+bits;
-				updateInput(textfield);
-				$btn = $('button.tw-button[data-a-target="chat-send-button"]');
-				$btn.click();
-				bits = 0;
-				$counter.find('#farm-counter').text(0);
+				if(bits != 0)
+				{
+					var textfield = $('textarea[data-a-target="chat-input"]')[0];
+					textfield.value = emotes.random()+bits;
+					updateInput(textfield);
+					$btn = $('button.tw-button[data-a-target="chat-send-button"]').click();
+					bits = 0;
+					$counter.text(0);
+				}
+
 			});
 		});
 		$.initialize('.chat-line__message', function(){
