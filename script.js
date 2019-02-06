@@ -103,6 +103,7 @@ jQuery(document).ready(function($) {
 
 	function register()
 	{
+		console.log('asd');
 		$.initialize('button[data-a-target="user-menu-toggle"]', function(){
 			if(settings.chatPage.length > 2)
 				window.location.href = "/popout/"+settings.chatPage+"/chat";
@@ -340,4 +341,3 @@ function farm()
 		}
 	}
 	*/
-
