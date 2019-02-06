@@ -91,6 +91,12 @@ jQuery(document).ready(function($) {
 			setSettings(settings);
 			$(this).click();
 		});
+
+		$.initialize('button[data-a-target="signup-button"]', function(){
+			settings.needLogout = false;
+			setSettings(settings);
+			location.reload();
+		});
 	}
 
 
@@ -334,3 +340,5 @@ function farm()
 		}
 	}
 	*/
+
+	jQuery.noConflict();
