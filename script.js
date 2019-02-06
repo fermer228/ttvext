@@ -341,4 +341,3 @@ function farm()
 	}
 	*/
 
-	jQuery.noConflict();
