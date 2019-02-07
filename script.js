@@ -19,8 +19,8 @@ jQuery(document).ready(function($) {
 	} else {
 		style.appendChild(document.createTextNode(css));
 	}
+	document.getElementsByTagName('head')[0].appendChild(style);
 
-document.getElementsByTagName('head')[0].appendChild(style);
 	
 	var isChat = (match != null) && (match.length == 2);
 	console.log(settings);
@@ -37,6 +37,9 @@ document.getElementsByTagName('head')[0].appendChild(style);
 			});
 		});
 		
+		$.initialize('button.tw-button[data-a-target="room-selector-button"]', function(){
+			$(this).remove();
+		});
 
 		$.initialize('button.tw-button-icon[data-a-target="bits-button"]', function() {
 			$('<div/>', {
