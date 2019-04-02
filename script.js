@@ -87,9 +87,9 @@ jQuery(document).ready(function($) {
 		else
 			register();
 	}
-	else
+	else if(path == '/hi')
 	{
-		//reg();
+		window.location.href = "https://www.twitch.tv/";
 	}
 	function updateInput(textfield)
 	{
@@ -105,11 +105,11 @@ jQuery(document).ready(function($) {
 	function logout()
 	{
 		$.initialize('button[data-a-target="user-menu-toggle"]', function(){
-			settings.lastLogin = $(this).find('.top-nav-user-menu__username p').text();
 			$(this).click();
 		});
 
 		$.initialize('button[data-a-target="dropdown-logout"]', function(){
+			settings.lastLogin = $(this).find('h6[data-a-target="user-display-name"]').text();
 			settings.needLogout = false;
 			setSettings(settings);
 			$(this).click();
@@ -122,9 +122,10 @@ jQuery(document).ready(function($) {
 		});
 	}
 
+
 	function register()
 	{
-		$.initialize('button[data-a-target="user-menu-toggle"]', function(){
+		$.initialize('body.logged-in', function(){
 			if(settings.chatPage.length > 2)
 				window.location.href = "/popout/"+settings.chatPage+"/chat";
 		});
@@ -133,6 +134,7 @@ jQuery(document).ready(function($) {
 			$(this).click();
 		});
 
+		
 		$.initialize('div[data-a-target="signup-username-input"] input', function(){
 			
 			var username = faker.internet.userName();
@@ -174,8 +176,21 @@ jQuery(document).ready(function($) {
 			year.value = date.getFullYear();
 			updateInput(year);
 				
-
+			
 		});
+
+		$.initialize('div[aria-label="Ввести код подтверждения"]', function(){
+			//$(this).click();
+			if(settings.chatPage.length > 2)
+				window.location.href = "/popout/"+settings.chatPage+"/chat";
+		});
+
+		$.initialize('div[aria-label="Verification code input"]', function(){
+			//$(this).click();
+			if(settings.chatPage.length > 2)
+				window.location.href = "/popout/"+settings.chatPage+"/chat";
+		});
+		
 	}
 
 	function clearPage()
