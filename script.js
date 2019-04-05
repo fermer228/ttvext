@@ -37,11 +37,11 @@ jQuery(document).ready(function($) {
 			});
 		});
 		
-		$.initialize('button.tw-button[data-a-target="room-selector-button"]', function(){
+		$.initialize('button[data-a-target="room-selector-button"]', function(){
 			$(this).remove();
 		});
 
-		$.initialize('button.tw-button-icon[data-a-target="bits-button"]', function() {
+		$.initialize('button[data-a-target="bits-button"]', function() {
 			$('<div/>', {
 				id: 'farm',
 				html: '<div id="farm-counter">0<\/div>'
@@ -68,7 +68,7 @@ jQuery(document).ready(function($) {
 					var textfield = $('textarea[data-a-target="chat-input"]')[0];
 					textfield.value = emotes.random()+bits;
 					updateInput(textfield);
-					$btn = $('button.tw-button[data-a-target="chat-send-button"]').click();
+					$btn = $('button[data-a-target="chat-send-button"]').click();
 					bits = 0;
 					$counter.text(0);
 				}
