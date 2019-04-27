@@ -40,6 +40,25 @@ jQuery(document).ready(function($) {
 		$.initialize('button[data-a-target="room-selector-button"]', function(){
 			$(this).remove();
 		});
+		
+		$.initialize('.cheermote-for-amount__cheer-image', function()
+		{
+			$(this).remove();
+		});
+
+
+		$.initialize('.cheer-badge__image', function(){
+			$(this).remove();
+		});
+
+		$.initialize('.tw-image[alt="BleedPurple"]', function(){
+			$(this).remove();
+		});
+
+		
+		$.initialize('.cheermote-prefix-selector', function(){
+			$(this).remove();
+		});
 
 		$.initialize('button[data-a-target="bits-button"]', function() {
 			$('<div/>', {
