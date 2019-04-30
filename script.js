@@ -57,7 +57,7 @@ jQuery(document).ready(function($) {
 
 		
 		$.initialize('.cheermote-prefix-selector', function(){
-			$(this).remove();
+			$(this).hide();
 		});
 
 		$.initialize('button[data-a-target="bits-button"]', function() {
