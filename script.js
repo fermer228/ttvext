@@ -3,7 +3,7 @@ var settings = {
 	lastLogin: [],
 	chatPage: []
 }
-var emotes = ["BleedPurple"];
+var emotes = [""];
 
 
 Array.prototype.random = function() {return this[Math.floor((Math.random()*this.length))];};
@@ -68,9 +68,9 @@ jQuery(document).ready(function($) {
 			$(this).click();
 		});
 
-		/*$.initialize('.cheermote-prefix-selector__cheermotes', function(){
+		$.initialize('.cheermote-prefix-selector__cheermotes', function(){
 			emotes = getEmotes();
-		});*/
+		});
 
 		$.initialize('.bits-count span', function(){
 			$(this).find('img').remove();
