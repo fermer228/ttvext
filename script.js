@@ -98,9 +98,9 @@ jQuery(document).ready(function($) {
 			$(this).find('.chat-image').remove();
 		});
 	}
-	else if(path == '/')
+	else if(path == '/' || path == '/friends')
 	{
-		clearPage();
+		//clearPage();
 		if(settings.needLogout)
 			logout();
 		else
@@ -108,11 +108,10 @@ jQuery(document).ready(function($) {
 	}
 	else if(path == '/hi')
 	{
-		window.location.href = "https://www.twitch.tv/";
+		window.location.href = "https://www.twitch.tv/friends";
 	}
 	function updateInput(textfield)
 	{
-		console.log(textfield);
 		evt = document.createEvent("Events");
 		evt.initEvent("change", true, true);
 		textfield.dispatchEvent(evt);
@@ -144,6 +143,10 @@ jQuery(document).ready(function($) {
 
 	function register()
 	{
+		$.initialize('button[data-a-target="passport-login-button"]', function(){
+			$('div[data-a-target="auth-form-tab-container"] > div > ul > li[data-index="1"] > button').click()
+		});
+		
 		$.initialize('body.logged-in', function(){
 			if(settings.chatPage.length > 2)
 				window.location.href = "/popout/"+settings.chatPage+"/chat";
@@ -240,7 +243,7 @@ function unlog()
 {
 	settings.needLogout = true;
 	setSettings(settings);
-	window.location.href = "https://www.twitch.tv/";
+	window.location.href = "https://www.twitch.tv/friends";
 }
 
 function setSettings(sets)
