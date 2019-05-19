@@ -5,6 +5,7 @@ var settings = {
 }
 var emotes = [""];
 
+var login = false;
 
 Array.prototype.random = function() {return this[Math.floor((Math.random()*this.length))];};
 var mails = ["gmail.com", "hotmail.com"].random();
@@ -143,8 +144,15 @@ jQuery(document).ready(function($) {
 
 	function register()
 	{
+		$.initialize('div[data-a-target="auth-form-tab-container"] > div > ul > li[data-index="0"] > button', function(){
+			$(this).click(function(){
+				login = true;
+			});
+		});
+
 		$.initialize('button[data-a-target="passport-login-button"]', function(){
-			$('div[data-a-target="auth-form-tab-container"] > div > ul > li[data-index="1"] > button').click()
+			if(!login)
+				$('div[data-a-target="auth-form-tab-container"] > div > ul > li[data-index="1"] > button').click()
 		});
 		
 		$.initialize('body.logged-in', function(){
