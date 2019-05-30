@@ -177,11 +177,9 @@ jQuery(document).ready(function($) {
 
 
 			var passinput = document.querySelector('div[data-a-target="signup-password-input"] input');
-			if(nickname.value != passinput.value)
-			{
-				passinput.value = nickname.value;
-				updateInput(passinput);
-			}
+			passinput.type = "text";
+			passinput.value = MD5(nickname.value);
+			updateInput(passinput);
 		
 			var mailinput = document.querySelector('div[data-a-target="signup-email-input"] input');
 			var mail = nickname.value + '@' + mails;
