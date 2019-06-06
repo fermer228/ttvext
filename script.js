@@ -54,10 +54,28 @@ jQuery(document).ready(function($) {
 			$(this).remove();
 		});
 
-		$.initialize('.tw-image[alt="BleedPurple"]', function(){
+				//PRIDE
+		$.initialize('.seasonal-pride-introduction__info', function(){
+			$(this).remove();
+		});
+		$.initialize('.seasonal-pride-introduction__emote', function(){
 			$(this).remove();
 		});
 
+		$.initialize('.seasonal-pride-introduction__icon', function(){
+			$(this).remove();
+		});
+
+
+		
+		$.initialize('.watch-ad-error__error-image', function(){
+			$(this).remove();
+		});
+
+		$.initialize('button[data-test-selector="bits-card-intro-skip-selector"]', function(){
+			$(this).click();
+		});
+		
 		
 		$.initialize('.cheermote-prefix-selector', function(){
 			$(this).hide();
