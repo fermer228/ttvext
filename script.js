@@ -12,6 +12,14 @@ var MD5 = function(d){result = M(V(Y(X(d),8*d.length)));return result.toLowerCas
 
 var mails = ["gmail.com", "hotmail.com"].random();
 jQuery(document).ready(function($) {
+	
+	
+	$.initialize('video', function(){
+		$(this).get(0).pause();
+		$(this).attr('src', '');
+		$(this).remove();
+	})
+	
 	var path = window.location.pathname;
 	var match = path.match(/^\/popout\/(\w+)\/chat$/)
 
