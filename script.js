@@ -18,7 +18,7 @@ jQuery(document).ready(function($) {
 		$(this).get(0).pause();
 		$(this).attr('src', '');
 		$(this).remove();
-	})
+	});
 	
 	var path = window.location.pathname;
 	var match = path.match(/^\/popout\/(\w+)\/chat$/)
