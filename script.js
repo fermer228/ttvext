@@ -61,7 +61,10 @@ jQuery(document).ready(function($) {
 		$.initialize('.cheer-badge__image', function(){
 			$(this).remove();
 		});
-
+		
+		$.initialize('.watch-ad-error__error-image', function(){
+			$(this).remove();
+		});
 
 		
 		
