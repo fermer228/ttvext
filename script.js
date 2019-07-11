@@ -81,7 +81,7 @@ jQuery(document).ready(function($) {
 		});
 
 		$.initialize('.cheermote-prefix-selector__cheermotes', function(){
-			emotes = getEmotes();
+			emotes = ["BleedPurple"];//getEmotes();
 		});
 
 		$.initialize('.bits-count span', function(){
@@ -94,7 +94,7 @@ jQuery(document).ready(function($) {
 			var $counter = $('#farm-counter');
 			$counter.text(bits);
 			$counter.click(function() {
-				if(bits != 0)
+				//if(bits != 0)
 				{
 					var textfield = $('textarea[data-a-target="chat-input"]')[0];
 					textfield.value = emotes.random()+bits;
