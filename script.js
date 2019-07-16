@@ -81,7 +81,7 @@ jQuery(document).ready(function($) {
 		});
 
 		$.initialize('.cheermote-prefix-selector__cheermotes', function(){
-			emotes = ["BleedPurple"];//getEmotes();
+			emotes = getEmotes();
 		});
 
 		$.initialize('.bits-count span', function(){
