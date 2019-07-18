@@ -41,15 +41,11 @@ jQuery(document).ready(function($) {
 		settings.chatPage = match[1];
 		setSettings(settings);
 		var bits;
-		$.initialize('#chat-room-header-label', function(){
+		$.initialize('button[data-a-target="room-selector-button"]', function(){
 			$(this).html('<div id="logout">logout<\/div>');
-			$('#logout').css({"font-size":"20px", "cursor":"pointer", "user-select":"none", "background":"white", "border":"1px solid black", "padding":"5px"}).click(function(){
+			$('#logout').css({"font-size":"20px", "cursor":"pointer", "user-select":"none", "background":"white", "border":"1px solid black", "padding":"0 5px"}).click(function(){
 				unlog();
 			});
-		});
-		
-		$.initialize('button[data-a-target="room-selector-button"]', function(){
-			$(this).remove();
 		});
 		
 		$.initialize('.cheermote-for-amount__cheer-image', function()
