@@ -1,0 +1,47 @@
+#farm
+{
+	  background-color: white;
+    position: absolute;
+    bottom: 10px;
+    left:20%;
+    border: 1px solid gray;
+    padding:5px;
+    z-index: 9999;
+    cursor: pointer;
+    font-size:30px; 
+    line-height:30px
+}
+
+#farm-counter
+{
+    font-size: 30px;
+    line-height: 30px;
+}
+#play_pause_farm 
+{
+    background:white; 
+    left:50%; 
+    position:absolute; 
+    top:5px; 
+    border:1px solid black; 
+    z-index:9999;
+    padding:5px;
+    font-size:18px;
+    cursor:pointer;
+    user-select:none;
+} 
+
+#bits-counter, #farm-counter {
+  display:inline-block;
+} 
+
+#logout
+{
+  font-size:20px;
+  cursor:pointer,
+  user-select:none,
+  background:white,
+  border:1px solid black,
+  padding:0 5px
+}
+
